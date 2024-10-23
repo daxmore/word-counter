@@ -5,7 +5,6 @@ const InputBox = (props) => {
 
     const inputBox = (e) => {
         setText(e.target.value)
-        console.log(text)
     }
 
     const toUpper = () => {
@@ -33,8 +32,8 @@ const InputBox = (props) => {
                 </div>
 
                 <div className="numberOfWordsAndCharater my-4">
-                    {text.split(" ").length} Words and {text.length} Characters <br />
-                    {0.008 * text.length} Time to Read this Text
+                    <span className='font-semibold'>{(text.trim() === "") ? 0 : text.split().length}</span> Words and <b>{text.length}</b> Characters <br />
+                    <span className='font-semibold'>{(0.008 * text.length).toFixed(2)}</span> Time to Read this Text
                 </div>
 
                 <div className="container bg-gray-200 h-[20rem] overflow-y-auto my-10 p-4 rounded-md">{text}</div>
